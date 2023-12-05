@@ -2,6 +2,10 @@
 import React, { useState } from "react";
 import styles from "./style.module.css";
 import { Container } from "../container/Container";
+import VisuallyHidden from "../visuallyhidden/VisuallyHidden";
+import Prev from "../icons/Prev";
+import Next from "../icons/Next";
+import clsx from "clsx";
 
 const data = [
   {
@@ -54,8 +58,20 @@ export default function MainField() {
             <p className={styles.questions}>{data[current].qestion}</p>
           </div>
           <div className={styles.questions__controls}>
-            <button onClick={prevSlide}>prev</button>
-            <button onClick={nextSlide}>next</button>
+            <button
+              className={clsx(styles.control__button, styles.prev)}
+              onClick={prevSlide}
+            >
+              <VisuallyHidden>previus</VisuallyHidden>
+              <Prev />
+            </button>
+            <button
+              className={clsx(styles.control__button, styles.next)}
+              onClick={nextSlide}
+            >
+              <VisuallyHidden>next</VisuallyHidden>
+              <Next />
+            </button>
           </div>
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.input__wrapper}>
