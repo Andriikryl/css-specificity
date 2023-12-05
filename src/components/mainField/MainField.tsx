@@ -6,6 +6,8 @@ import VisuallyHidden from "../visuallyhidden/VisuallyHidden";
 import Prev from "../icons/Prev";
 import Next from "../icons/Next";
 import clsx from "clsx";
+import CorectAnswer from "../corectAnswer/CorectAnswer";
+import WrongAnswer from "../wrongAnswer/WrongAnswer";
 
 const data = [
   {
@@ -51,10 +53,22 @@ export default function MainField() {
   };
 
   return (
-    <section>
+    <section className={styles.MainField}>
       <Container>
         <div>
+          <div className={styles.answer__box}>
+            {isCorrect === true ? (
+              <CorectAnswer />
+            ) : isCorrect === false ? (
+              <WrongAnswer />
+            ) : (
+              ""
+            )}
+          </div>
           <div className={styles.questions__box}>
+            <p className={styles.number__questions}>
+              {current + 1}/{data.length}
+            </p>
             <p className={styles.questions}>{data[current].qestion}</p>
           </div>
           <div className={styles.questions__controls}>
@@ -122,13 +136,6 @@ export default function MainField() {
               Subimt
             </button>
           </form>
-          <p>
-            {isCorrect === true
-              ? "Correct answer!"
-              : isCorrect === false
-              ? "Wrong answer."
-              : ""}
-          </p>
         </div>
       </Container>
     </section>

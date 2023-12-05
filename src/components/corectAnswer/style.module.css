@@ -1,0 +1,16 @@
+.corect{
+    padding: 18px 18px 22px 20px;
+    border-radius: 8px;
+    border: 4px solid var(--accent-caribbean-green, #37D4AD);
+    background: #E9FFF8;
+    box-shadow: 0px 4px 0px 0px rgba(51, 51, 51, 0.16);
+}
+.corect p{
+    color:#03045e;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; 
+    letter-spacing: -0.15px;
+}

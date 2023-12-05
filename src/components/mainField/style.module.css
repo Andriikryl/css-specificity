@@ -1,3 +1,6 @@
+.MainField{
+    margin-block-end: 30px;
+}
 .questions__box{
     width: 100%;
     padding-block: 70px;
@@ -8,6 +11,21 @@
     display: grid;
     place-items: center;
     margin-block-end: 30px;
+    position: relative;
+}
+
+.number__questions{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px;
+    color: var(--black, #1B1B1B);
+    text-align: center;
+    font-family: Patrick Hand;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; 
 }
 
 .questions{
@@ -134,4 +152,17 @@
 
 .next:hover{
     background-color: #8ac926;
+}
+
+.answer__box{
+    padding: 20px;
+    max-width: 300px;
+    min-height: 60px;
+    border-radius: 8px;
+    border: 2px solid var(--black, #1B1B1B);
+    background: var(--white, #FFF);
+    margin-block-end: 20px;
+    margin-inline: auto;
+    display: grid;
+    place-items: center;
 }
