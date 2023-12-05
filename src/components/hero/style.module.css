@@ -1,0 +1,65 @@
+.title__box{
+    margin-block: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    background: var(--gray-1, #EEE);
+}
+
+.qa__box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.arrow__dowBox{
+    margin-block: 100px;
+    display: grid;
+    place-items: center;
+    transform: rotate(-90deg);
+}
+.hero__title{
+    background-image: url("/lines/Circle.png");
+    background-size: 247px 90px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 32px;
+    text-align: center;
+    color: var(--black, #1B1B1B);
+    font-family: Patrick Hand;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.3px;
+}
+
+.flex__group{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.info__bloc{
+    max-width: 140px;
+    border-radius: 12px;
+    border: 3px solid var(--black, #1B1B1B);
+    background: var(--white, #FFF);
+    padding: 12px 16px 18px 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
+}
+
+.info__bloc p{
+    color: var(--black, #1B1B1B);
+    font-family: Patrick Hand;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 137.5% */
+    letter-spacing: 0.16px;
+}
+
+.image__boxWem{
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}

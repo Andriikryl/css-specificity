@@ -1,7 +1,14 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Hero from "@/components/content/Content";
+import { Content } from "next/font/google";
+import MainField from "@/components/mainField/MainField";
+import Hero from "@/components/hero/Hero";
 
 export default function Home() {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <MainField />
+    </>
+  );
 }
