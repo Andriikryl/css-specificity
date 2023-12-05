@@ -22,9 +22,9 @@ const data = [
 
 export default function MainField() {
   const [current, setCurrent] = useState(0);
-  const [wId, setWId] = React.useState("");
-  const [wClass, setWClass] = React.useState("");
-  const [wType, setWType] = React.useState("");
+  const [wId, setWId] = React.useState("0");
+  const [wClass, setWClass] = React.useState("0");
+  const [wType, setWType] = React.useState("0");
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const nextSlide = () => {
     setCurrent(current === data.length - 1 ? 0 : current + 1);
@@ -52,6 +52,10 @@ export default function MainField() {
         <div>
           <div className={styles.questions__box}>
             <p className={styles.questions}>{data[current].qestion}</p>
+          </div>
+          <div className={styles.questions__controls}>
+            <button onClick={prevSlide}>prev</button>
+            <button onClick={nextSlide}>next</button>
           </div>
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.input__wrapper}>
@@ -102,10 +106,6 @@ export default function MainField() {
               Subimt
             </button>
           </form>
-          <div>
-            <button onClick={prevSlide}>prev</button>
-            <button onClick={nextSlide}>next</button>
-          </div>
           <p>
             {isCorrect === true
               ? "Correct answer!"

@@ -49,6 +49,16 @@
     text-align: center;
 }
 
+.input__group:nth-child(1) .input{
+    color: #fca311;  
+}
+.input__group:nth-child(2) .input{
+    color: #e63946;
+}
+.input__group:nth-child(3) .input{
+    color: #4cc9f0;
+}
+
 .label__id{
     overflow: hidden;
     color: #fca311;
@@ -97,4 +107,9 @@
     font-weight: 400;
     line-height: 28px; 
     cursor: pointer;
+}
+
+.questions__controls{
+    display: flex;
+    justify-content: space-between;
 }
