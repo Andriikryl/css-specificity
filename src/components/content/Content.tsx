@@ -19,7 +19,7 @@ const data = [
   },
 ];
 
-export default function Hero() {
+export default function Content() {
   const [current, setCurrent] = useState(0);
   const [wId, setWId] = React.useState("");
   const [wClass, setWClass] = React.useState("");
