@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import { Container } from "../container/Container";
 import VisuallyHidden from "../visuallyhidden/VisuallyHidden";
@@ -32,6 +32,9 @@ export default function MainField() {
   const [wClass, setWClass] = React.useState("0");
   const [wType, setWType] = React.useState("0");
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  useEffect(() => {
+    setIsCorrect(null);
+  }, [current]);
   const nextSlide = () => {
     setCurrent(current === data.length - 1 ? 0 : current + 1);
   };
@@ -56,7 +59,11 @@ export default function MainField() {
     <section className={styles.MainField}>
       <Container>
         <div>
-          <div className={styles.answer__box}>
+          <div
+            className={clsx(styles.answer__box, {
+              [styles.show]: isCorrect === true || isCorrect === false,
+            })}
+          >
             {isCorrect === true ? (
               <CorectAnswer />
             ) : isCorrect === false ? (
