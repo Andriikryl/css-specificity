@@ -8,6 +8,8 @@ import Next from "../icons/Next";
 import clsx from "clsx";
 import CorectAnswer from "../corectAnswer/CorectAnswer";
 import WrongAnswer from "../wrongAnswer/WrongAnswer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const data = [
   {
@@ -52,8 +54,14 @@ export default function MainField() {
     ) {
       setIsCorrect(true);
       setSolved(solved.map((item, index) => (index === current ? true : item)));
+      toast.success("Corect answer !", {
+        position: toast.POSITION.BOTTOM_CENTER,
+      });
     } else {
       setIsCorrect(false);
+      toast.error("Wrong answer !", {
+        position: toast.POSITION.TOP_CENTER,
+      });
     }
   };
 
@@ -61,19 +69,6 @@ export default function MainField() {
     <section className={styles.MainField}>
       <Container>
         <div>
-          <div
-            className={clsx(styles.answer__box, {
-              [styles.show]: isCorrect === true || isCorrect === false,
-            })}
-          >
-            {isCorrect === true ? (
-              <CorectAnswer />
-            ) : isCorrect === false ? (
-              <WrongAnswer />
-            ) : (
-              ""
-            )}
-          </div>
           <div className={styles.box}>
             <div className={styles.questions__box}>
               {solved[current] && (
@@ -83,6 +78,7 @@ export default function MainField() {
                 {current + 1}/{data.length}
               </p>
               <p className={styles.questions}>{data[current].qestion}</p>
+              <ToastContainer />
             </div>
           </div>
           <div className={styles.questions__controls}>
