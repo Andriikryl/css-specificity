@@ -55,7 +55,7 @@ export default function MainField() {
       setIsCorrect(true);
       setSolved(solved.map((item, index) => (index === current ? true : item)));
       toast.success("Corect answer !", {
-        position: toast.POSITION.BOTTOM_CENTER,
+        position: toast.POSITION.TOP_CENTER,
       });
     } else {
       setIsCorrect(false);
@@ -82,7 +82,6 @@ export default function MainField() {
                 {current + 1}/{data.length}
               </p>
               <p className={styles.questions}>{data[current].qestion}</p>
-              <ToastContainer />
             </div>
           </div>
           <div className={styles.questions__controls}>
@@ -157,6 +156,7 @@ export default function MainField() {
               Subimt
             </button>
           </form>
+          <ToastContainer />
         </div>
       </Container>
     </section>
