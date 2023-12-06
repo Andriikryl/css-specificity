@@ -69,7 +69,11 @@ export default function MainField() {
     <section className={styles.MainField}>
       <Container>
         <div>
-          <div className={styles.box}>
+          <div
+            className={clsx(styles.box, {
+              [styles.box__solved]: solved[current],
+            })}
+          >
             <div className={styles.questions__box}>
               {solved[current] && (
                 <p className={styles.question__solved}>Solved</p>
