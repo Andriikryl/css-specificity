@@ -33,7 +33,7 @@
 .questions{
     color: var(--black, #1B1B1B);
     font-family: Patrick Hand;
-    font-size: 36px;
+    font-size: clamp(20px, 5vw + 1rem, 36px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -62,7 +62,7 @@
 .input{
     max-width: 70px; 
     height: 100px;
-    font-size: 40px;
+    font-size: clamp(20px, 5vw + 1rem, 40px);
     border-radius: 8px;
     border: 2px solid var(--black, #1B1B1B);
     background: var(--white, #FFF);
@@ -94,7 +94,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     font-family: Patrick Hand;
-    font-size: 31px;
+    font-size: clamp(20px, 5vw + 1rem, 31px);
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0.18px;
@@ -106,7 +106,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     font-family: Patrick Hand;
-    font-size: 31px;
+    font-size: clamp(20px, 5vw + 1rem, 31px);
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0.18px;
@@ -117,7 +117,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     font-family: Patrick Hand;
-    font-size: 31px;
+    font-size: clamp(20px, 5vw + 1rem, 31px);
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0.18px;

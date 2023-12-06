@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useId, useState } from "react";
 import styles from "./style.module.css";
 import { Container } from "../container/Container";
 import VisuallyHidden from "../visuallyhidden/VisuallyHidden";
@@ -35,6 +35,7 @@ export default function MainField() {
   const [wType, setWType] = React.useState("0");
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [solved, setSolved] = useState(new Array(data.length).fill(false));
+  const id = useId();
   useEffect(() => {
     setIsCorrect(null);
   }, [current]);
@@ -64,6 +65,9 @@ export default function MainField() {
       });
     }
   };
+  const numberId = `${id}-Id-value`;
+  const numberClass = `${id}-Class-value`;
+  const numberType = `${id}-Type-value`;
 
   return (
     <section className={styles.MainField}>
@@ -103,29 +107,31 @@ export default function MainField() {
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.input__wrapper}>
               <div className={styles.input__group}>
-                <label className={styles.label__id} htmlFor="name-field">
+                <label className={styles.label__id} htmlFor={numberId}>
                   id
                 </label>
                 <input
                   className={styles.input}
                   disabled={solved[current]}
                   type="number"
-                  id="name-field"
+                  id={numberId}
                   value={wId}
+                  min="0"
                   onChange={(event) => {
                     setWId(event.target.value);
                   }}
                 />
               </div>
               <div className={styles.input__group}>
-                <label className={styles.label__class} htmlFor="name-field">
+                <label className={styles.label__class} htmlFor={numberClass}>
                   Class
                 </label>
                 <input
                   className={styles.input}
                   disabled={solved[current]}
                   type="number"
-                  id="name-field"
+                  id={numberClass}
+                  min="0"
                   value={wClass}
                   onChange={(event) => {
                     setWClass(event.target.value);
@@ -133,14 +139,15 @@ export default function MainField() {
                 />
               </div>
               <div className={styles.input__group}>
-                <label className={styles.label__type} htmlFor="name-field">
+                <label className={styles.label__type} htmlFor={numberType}>
                   Type
                 </label>
                 <input
                   disabled={solved[current]}
                   className={styles.input}
                   type="number"
-                  id="name-field"
+                  id={numberType}
+                  min="0"
                   value={wType}
                   onChange={(event) => {
                     setWType(event.target.value);
