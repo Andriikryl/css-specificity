@@ -10,8 +10,10 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
     display: grid;
     place-items: center;
-    margin-block-end: 30px;
     position: relative;
+    background-image: linear-gradient(to right, #80808012 1px, transparent 1px),
+    linear-gradient(to bottom, #80808012 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 .number__questions{
@@ -65,6 +67,15 @@
     border: 2px solid var(--black, #1B1B1B);
     background: var(--white, #FFF);
     text-align: center;
+}
+
+.input:disabled{
+    background-color: hsl(165, 65%, 52%, .4);
+    cursor: not-allowed;
+}
+.form__button:disabled{
+    cursor: not-allowed;
+    background-color: hsl(165, 65%, 52%, .4);
 }
 
 .input__group:nth-child(1) .input{
@@ -171,3 +182,51 @@
 .show{
     opacity: 1;
 }
+
+.question__solved{
+    margin: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 8px;
+    border: 4px solid var(--accent-caribbean-green, #37D4AD);
+    background: #E9FFF8;
+    padding: 18px 18px 22px 20px;
+    box-shadow: 0px 4px 0px 0px rgba(51, 51, 51, 0.16);
+    color: #ffbe0b;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+}
+
+.box {
+    display: grid;
+    place-items: center;
+    padding: 12px;
+    border: 5px solid #0000;
+    border-radius: 12px;
+    background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(
+          var(--angle),
+          #a2d2ff,
+          #ffb703
+        ) border-box;
+    animation: 7s rotate linear infinite;
+    margin-block-end: 20px;
+  }
+  
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+  
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  

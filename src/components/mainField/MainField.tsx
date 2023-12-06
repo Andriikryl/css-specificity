@@ -32,6 +32,7 @@ export default function MainField() {
   const [wClass, setWClass] = React.useState("0");
   const [wType, setWType] = React.useState("0");
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const [solved, setSolved] = useState(new Array(data.length).fill(false));
   useEffect(() => {
     setIsCorrect(null);
   }, [current]);
@@ -50,6 +51,7 @@ export default function MainField() {
       parseInt(wType) === data[current].inputType
     ) {
       setIsCorrect(true);
+      setSolved(solved.map((item, index) => (index === current ? true : item)));
     } else {
       setIsCorrect(false);
     }
@@ -72,11 +74,16 @@ export default function MainField() {
               ""
             )}
           </div>
-          <div className={styles.questions__box}>
-            <p className={styles.number__questions}>
-              {current + 1}/{data.length}
-            </p>
-            <p className={styles.questions}>{data[current].qestion}</p>
+          <div className={styles.box}>
+            <div className={styles.questions__box}>
+              {solved[current] && (
+                <p className={styles.question__solved}>Solved</p>
+              )}
+              <p className={styles.number__questions}>
+                {current + 1}/{data.length}
+              </p>
+              <p className={styles.questions}>{data[current].qestion}</p>
+            </div>
           </div>
           <div className={styles.questions__controls}>
             <button
@@ -102,6 +109,7 @@ export default function MainField() {
                 </label>
                 <input
                   className={styles.input}
+                  disabled={solved[current]}
                   type="number"
                   id="name-field"
                   value={wId}
@@ -116,6 +124,7 @@ export default function MainField() {
                 </label>
                 <input
                   className={styles.input}
+                  disabled={solved[current]}
                   type="number"
                   id="name-field"
                   value={wClass}
@@ -129,6 +138,7 @@ export default function MainField() {
                   Type
                 </label>
                 <input
+                  disabled={solved[current]}
                   className={styles.input}
                   type="number"
                   id="name-field"
@@ -139,7 +149,11 @@ export default function MainField() {
                 />
               </div>
             </div>
-            <button className={styles.form__button} type="submit">
+            <button
+              className={styles.form__button}
+              type="submit"
+              disabled={solved[current]}
+            >
               Subimt
             </button>
           </form>
