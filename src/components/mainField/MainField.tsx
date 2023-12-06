@@ -6,27 +6,9 @@ import VisuallyHidden from "../visuallyhidden/VisuallyHidden";
 import Prev from "../icons/Prev";
 import Next from "../icons/Next";
 import clsx from "clsx";
-import CorectAnswer from "../corectAnswer/CorectAnswer";
-import WrongAnswer from "../wrongAnswer/WrongAnswer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const data = [
-  {
-    id: "1",
-    qestion: "#myId",
-    inputId: 1,
-    inputClass: 0,
-    inputType: 0,
-  },
-  {
-    id: "2",
-    qestion: '[type="password"]',
-    inputId: 0,
-    inputClass: 1,
-    inputType: 0,
-  },
-];
+import { data } from "../data/data";
 
 export default function MainField() {
   const [current, setCurrent] = useState(0);
