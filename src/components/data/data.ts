@@ -38,7 +38,7 @@ export const data = [
       id: "6",
       qestion: '#myApp [id="myElement"]',
       inputId: 1,
-      inputClass: 0,
+      inputClass: 1,
       inputType: 0,
     },
     {

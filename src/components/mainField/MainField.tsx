@@ -68,6 +68,13 @@ export default function MainField() {
                 {current + 1}/{data.length}
               </p>
               <p className={styles.questions}>{data[current].qestion}</p>
+              {solved[current] && (
+                <p className={styles.solved__answer}>
+                  <span>{data[current].inputId}</span>
+                  <span>{data[current].inputClass}</span>
+                  <span>{data[current].inputType}</span>
+                </p>
+              )}
             </div>
           </div>
           <div className={styles.questions__controls}>

@@ -72,10 +72,12 @@
 .input:disabled{
     background-color: hsl(165, 65%, 52%, .4);
     cursor: not-allowed;
+    filter: blur(10px);
 }
 .form__button:disabled{
     cursor: not-allowed;
     background-color: hsl(165, 65%, 52%, .4);
+    filter: blur(10px);
 }
 
 .input__group:nth-child(1) .input{
@@ -255,4 +257,34 @@
     initial-value: 0deg;
     inherits: false;
   }
+
   
+  .solved__answer{
+    margin-block-start: 20px;
+    padding: 10px;
+    display: flex;
+    gap: 7px;
+    border-radius: 8px;
+    border: 3px solid var(--black, #1B1B1B);
+    background: var(--white, #FFF);
+  }
+
+  .solved__answer span{
+    color: var(--black, #1B1B1B);
+    text-align: center;
+    font-family: Patrick Hand;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .solved__answer span:nth-child(1){
+    color: #fca311;
+  }
+  .solved__answer span:nth-child(2){
+    color: #e63946;
+  }
+  .solved__answer span:nth-child(3){
+    color: #4cc9f0;
+  }

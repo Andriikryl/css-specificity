@@ -1,0 +1,19 @@
+.navigate__title{
+    margin-block-start: 100px;
+    padding: 30px;
+    border-radius: 8px;
+    background: var(--gray-1, #EEE);
+    text-align: center;
+    color: var(--black, #1B1B1B);
+    font-family: Patrick Hand;
+    font-size: clamp(20px, 5vw + 1rem, 64px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; 
+}
+.arrow__dowBox{
+    margin-block: 100px;
+    display: grid;
+    place-items: center;
+    transform: rotate(-90deg);
+}
